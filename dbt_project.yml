@@ -33,57 +33,17 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   dbt_etl:
-      dim:
-          schema: dim
-          materialized: table
-          transient: true
+    stage:
+        schema: stage
+        materialized: table
+        transient: true
 
-          intermediate:
-            materialized: view
-          incremental:
-            materialized: incremental
-          view:
-            materialized: view
-
-      fact:
-          schema: fact
-          materialized: table
-          transient: true
-
-          intermediate:
-            materialized: view
-          incremental:
-            materialized: incremental
-          view:
-            materialized: view
-          
-      stage:
-          schema: stage
-          materialized: table
-          transient: true
-
-          intermediate:
-            materialized: view
-          incremental:
-            materialized: incremental
-          view:
-            materialized: view
-
-      reports:
-          schema: reports
-          materialized: table
-          transient: true
-
-          intermediate:
-            materialized: view
-          incremental:
-            materialized: incremental
-          view:
-            materialized: view
-      pulse:
-          schema: market_america
-          materialized: table
-          
+        intermediate:
+          materialized: view
+        incremental:
+          materialized: incremental
+        view:
+          materialized: view
 
 
 seeds:
