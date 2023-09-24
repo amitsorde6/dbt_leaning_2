@@ -44,6 +44,17 @@ models:
           materialized: incremental
         view:
           materialized: view
+    fact:
+        schema: fact
+        materialized: table
+        transient: true
+
+        intermediate:
+          materialized: view
+        incremental:
+          materialized: incremental
+        view:
+          materialized: view
     stage:
         schema: stage
         materialized: table
@@ -55,6 +66,20 @@ models:
           materialized: incremental
         view:
           materialized: view
+    reports:
+        schema: reports
+        materialized: table
+        transient: true
+
+        intermediate:
+          materialized: view
+        incremental:
+          materialized: incremental
+        view:
+          materialized: view
+    pulse:
+        schema: market_america
+        materialized: table
 
 
 seeds:
