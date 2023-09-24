@@ -33,6 +33,17 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   dbt_etl:
+    dim:
+        schema: dim
+        materialized: table
+        transient: true
+
+        intermediate:
+          materialized: view
+        incremental:
+          materialized: incremental
+        view:
+          materialized: view
     stage:
         schema: stage
         materialized: table
